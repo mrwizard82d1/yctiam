@@ -462,6 +462,28 @@ textarea {
         width: auto;
     }
 
+    input.prevButton {
+        background:url(/Content/images/prev.jpg) no-repeat;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1.2em;
+        font-weight: 600;
+        padding: 7px;
+        margin-right: 8px;
+        width: 32px;
+    }
+
+    input.nextButton {
+        background:url(/Content/images/next.jpg) no-repeat;
+        border: 1px solid #787878;
+        cursor: pointer;
+        font-size: 1.2em;
+        font-weight: 600;
+        padding: 7px;
+        margin-right: 8px;
+        width: 32px;
+    }
+
     td input[type="submit"],
     td input[type="button"],
     td button {
@@ -585,7 +607,6 @@ td {
 tr.pager td {
     padding: 0 0.25em 0 0;
 }
-
 
 /********************
 *   Mobile Styles   *
