@@ -6,6 +6,7 @@ lib/
 classes/
 checkouts/
 **/resources/public/js/*
+**/Scripts/timbin_fig.js
 out/
 pom.xml
 *.jar

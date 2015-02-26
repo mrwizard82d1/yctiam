@@ -19,7 +19,8 @@
   :cljsbuild {
     :builds [{:id "dev"
               :source-paths ["src" "dev_src"]
-              :compiler {:output-to "resources/public/js/compiled/timbin_fig.js"
+              :compiler {:output-to
+                         "resources/public/js/compiled/timbin_fig.js"
                          :output-dir "resources/public/js/compiled/out"
                          :optimizations :none
                          :main timbin-fig.dev
@@ -29,10 +30,18 @@
                          :cache-analysis true }}
              {:id "min"
               :source-paths ["src"]
-              :compiler {:output-to "resources/public/js/compiled/timbin_fig.js"
+              :compiler {:output-to
+                         "resources/public/js/compiled/timbin_fig.js"
                          :main timbin-fig.core                         
                          :optimizations :advanced
-                         :pretty-print false}}]}
+                         :pretty-print false}}
+             {:id "vs-dev"
+              :source-paths ["src"]
+              :compiler {:output-to
+                         "resources/public/js/compiled/timbin_fig.js"
+                         :main timbin-fig.core                         
+                         :optimizations :whitespace
+                         :pretty-print true}}]}
 
   :figwheel {
              :http-server-root "public" ;; default and assumes "resources" 
