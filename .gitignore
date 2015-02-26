@@ -18,6 +18,9 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+# Generated JavaScript files
+*.cljs.js
+
 # Roslyn cache directories
 *.ide/
 
@@ -229,6 +232,9 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+# Editor files
+*.swp
 
 # Backup files
 *~
