@@ -10,14 +10,19 @@
                  ;; though these are warnings, they seem to cause some
                  ;; instability with the interpreter. version 2511
                  ;; seems to be the last "clean" interpreter.
-                 [org.clojure/clojurescript "0.0-2511"]]
+                 [org.clojure/clojurescript "0.0-2511"]
+                 [compojure "1.3.2"]
+                 [ring/ring-jetty-adapter "1.3.2"]]
   ;; We need to add src/cljs too, because cljsbuild does not add its
   ;; source-paths to the project source-paths
   :source-paths ["src/clj" "src/cljs" "test/cljs"]
 
-  :plugins [[lein-cljsbuild "1.0.5"]]
+  :plugins [[lein-cljsbuild "1.0.5"]
+            [lein-ring "0.9.2"]]
 
   :hooks [leiningen.cljsbuild]
+
+  :ring {:handler timbin-cljsb.core/handler}
 
   :cljsbuild
   {:builds {;; This build is only used for including any cljs source
@@ -32,6 +37,6 @@
              ;:jar true
              ;; Compilation Options
              :compiler
-             {:output-to "resources/public/js/timbin-cljsb.js"
+             {:output-to "resources/public/js/timbin_cljsb.js"
               :optimizations :whitespace
               :pretty-print true}}}})

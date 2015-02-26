@@ -184,13 +184,13 @@ FakesAssemblies/
 
 # I'm uncertain how to "include" this file so I'm hard-coding values.
 # Leiningen.gitignore
-/repl
-/target
-/lib
-/classes
-/checkouts
-/resources/public/js/*
-/out
+repl/
+target/
+lib/
+classes/
+checkouts/
+**/resources/public/js/
+out/
 pom.xml
 *.jar
 *.class
