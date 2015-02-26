@@ -24,13 +24,13 @@
 <form action="UpdateTime" method="post">
     <h1>How I spent my day</h1>
     <span>
-        <input type="button" class="prevButton"
-               name="prevDay" id="prevDay" />
+        <input type="button" onclick="timbin_fig.core.prev_day()"
+               class="prevButton" name="prevDay" id="prevDay" />
         Date: <input type="date"
                      value="@ViewBag.Today.ToString("yyyy-MM-dd")"
                      name="forDate" id="forDate" required autofocus />
-        <input type="button" class="nextButton"
-               name="nextDay" id="nextDay" />
+        <input type="button" onclick="timbin_fig.core.next_day()"
+               class="nextButton" name="nextDay" id="nextDay" />
     </span>
 
 </form>
