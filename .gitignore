@@ -18,6 +18,10 @@ bld/
 [Bb]in/
 [Oo]bj/
 
+# We "build" the generated JavaScript file and copy it to the Scripts
+# directory.
+TimeIsMoneyBin/TimeIsMoneyBin/Scripts/timbin_cljsb.js
+
 # Roslyn cache directories
 *.ide/
 
