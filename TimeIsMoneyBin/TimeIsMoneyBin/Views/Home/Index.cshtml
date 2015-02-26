@@ -18,18 +18,19 @@
     </section>
 }
 @section scripts {
-    @Scripts.Render("~/bundles/timbin_cljsb")
+    @* @Scripts.Render("~/bundles/timbin_cljsb") *@
+    @Scripts.Render("~/Scripts/timbin_cljsb.js")
 }
 <form action="UpdateTime" method="post">
     <h1>How I spent my day</h1>
     <span>
-        <input type="button" class="prevButton"
-               name="prevDay" id="prevDay"/>
+        <input type="button" onclick="timbin_cljsb.core.prev_day()"
+               class="prevButton" name="prevDay" id="prevDay"/>
         Date: <input type="date" 
                      value="@ViewBag.Today.ToString("yyyy-MM-dd")" 
                      name="forDate" id="forDate"  required autofocus/>
-        <input type="button" class="nextButton" 
-               name="nextDay" id="nextDay"/>
+        <input type="button" onclick="timbin_cljsb.core.next_day()"
+               class="nextButton" name="nextDay" id="nextDay"/>
     </span>
 
 </form>
