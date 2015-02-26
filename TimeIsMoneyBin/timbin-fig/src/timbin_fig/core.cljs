@@ -12,22 +12,27 @@
 
 (defonce app-state (atom {:text "Hello world!"}))
 
-(defn prev-day []
-  (println "Handling onclick of prevButton")
-  (let [date-control (dom/getElement "forDate")
+(defn adjust-date [date-id adjust]
+  (let [date-control (dom/getElement date-id)
         current-date-text (.-value date-control)
-        prev-date (js/Date. (.parse js/Date current-date-text))]
-    (println current-date-text)
-    (.setDate prev-date (dec (.getDate prev-date)))
-    (println "prev" prev-date)
-    (println "fullYear" (.getFullYear prev-date))
-    (println "month" (inc  (.getMonth prev-date)))
-    (println "day" (inc (.getDate prev-date)))
+        adj-date (js/Date. (.parse js/Date current-date-text))]
+    (adjust adj-date)
     (set! (.-value date-control)
           (gstr/format "%d-%02d-%02d"
-                       (.getFullYear prev-date)
-                       (inc (.getMonth prev-date))
-                       (inc (.getDate prev-date))))))
+                       (.getFullYear adj-date)
+                       (inc (.getMonth adj-date))
+                       (inc (.getDate adj-date))))))
+
+(defn yesterday! [date]
+  (.setDate date (dec (.getDate date))))
+
+(defn prev-day []
+  (println "Handling onclick of prevButton")
+  (adjust-date "forDate" yesterday!))
+
+(defn tomorrow! [date]
+  (.setDate date (inc (.getDate date))))
 
 (defn next-day []
-  (println "Handling onclick of nextButton"))
+  (println "Handling onclick of nextButton")
+  (adjust-date "forDate" tomorrow!))
